@@ -47,7 +47,6 @@ function readButton(event) {
         if(newNumber === 1) {
             updateDisplay(event.target.textContent);
             newNumber = 0;
-            console.log(event.target.value);
         }
         else
             updateDisplay(display + event.target.textContent);
@@ -78,5 +77,10 @@ function readButton(event) {
             updateDisplay(numberOne);
             newNumber = 1;
         }
+    }
+    else if(Array.from(event.target.classList).includes("clearAll")) {
+        operator = "";
+        updateDisplay("");
+        newNumber = 1;
     }
 }
